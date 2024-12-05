@@ -25,6 +25,9 @@ case $board in
 	xiaomi,cr881x)
 		ucidef_set_led_switch "wan" "WAN" "blue:internet" "switch0" "$( bits 3 )"
 		;;
+    h3c,nx30)
+        ucidef_set_led_switch "wan" "WAN" "green:internet" "switch1" "$( bits 4 )"
+        ;;
 esac
 
 board_config_flush

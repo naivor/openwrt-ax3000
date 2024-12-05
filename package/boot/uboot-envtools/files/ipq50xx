@@ -14,6 +14,9 @@ case "$board" in
 	xiaomi,cr881x)
 		ubootenv_add_uci_config "/dev/mtd10" "0x0" "0x10000" "0x20000"
 		;;
+    h3c,nx30)
+        ubootenv_add_uci_config "/dev/mtd10" "0x0" "0x480000" "0x80000"
+        ;;
 esac
 
 config_load ubootenv

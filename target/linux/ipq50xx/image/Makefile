@@ -88,4 +88,28 @@ define Device/xiaomi_cr881x
 endef
 TARGET_DEVICES += xiaomi_cr881x
 
+define Device/h3c_nx30
+  $(call Device/FitImage)
+  $(call Device/UbiFit)
+  SOC := ipq5018
+  DEVICE_VENDOR := H3c
+  DEVICE_MODEL := NX30
+  DEVICE_ALT0_VENDOR := H3c
+  DEVICE_ALT0_MODEL := RC3000
+  DEVICE_ALT1_VENDOR := H3c
+  DEVICE_ALT1_MODEL := RT3000
+  DEVICE_ALT2_VENDOR := H3c
+  DEVICE_ALT2_MODEL := RW3000
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  DEVICE_DTS_CONFIG := config@mp03.3
+  IMAGES := nand-factory.ubi
+  DEVICE_PACKAGES := \
+	ath11k-firmware-ipq5018 \
+	ath11k-firmware-qcn6122 \
+	ipq-wifi-h3c_nx30
+endef
+TARGET_DEVICES += h3c_nx30
+
+
 $(eval $(call BuildImage))
