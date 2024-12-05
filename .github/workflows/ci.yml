@@ -67,7 +67,9 @@ jobs:
       - name: Build toolchain
         run: |
           make -j$(nproc) toolchain/install
-
+      - name: Build Test
+        run: |
+          make V=sc
       - name: Build all
         run: |
           make -j$(nproc) IGNORE_ERRORS=1
